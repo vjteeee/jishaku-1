@@ -124,16 +124,16 @@ class PythonFeature(Feature):
                 allowed_mentions=discord.AllowedMentions.none()
             )
 
-        if use_file_check(ctx, len(result)):  # File "full content" preview limit
-            # Discord's desktop and web client now supports an interactive file content
-            #  display for files encoded in UTF-8.
-            # Since this avoids escape issues and is more intuitive than pagination for
-            #  long results, it will now be prioritized over PaginatorInterface if the
-            #  resultant content is below the filesize threshold
-            return await ctx.send(file=discord.File(
-                filename="output.py",
-                fp=io.BytesIO(result.encode('utf-8'))
-            ))
+#         if use_file_check(ctx, len(result)):  # File "full content" preview limit
+#             # Discord's desktop and web client now supports an interactive file content
+#             #  display for files encoded in UTF-8.
+#             # Since this avoids escape issues and is more intuitive than pagination for
+#             #  long results, it will now be prioritized over PaginatorInterface if the
+#             #  resultant content is below the filesize threshold
+#             return await ctx.send(file=discord.File(
+#                 filename="output.py",
+#                 fp=io.BytesIO(result.encode('utf-8'))
+#             ))
 
         # inconsistency here, results get wrapped in codeblocks when they are too large
         #  but don't if they're not. probably not that bad, but noting for later review
