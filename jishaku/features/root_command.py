@@ -158,7 +158,7 @@ class RootCommand(Feature):
         # pylint: enable=protected-access
 
         # Show websocket latency in milliseconds
-        summary.append(f"Average websocket latency: {round(self.bot.latency * 1000, 2)}ms")
+        summary.append(f"Average websocket latency: {round(self.bot.latency * 1000, 2)}ms. Total commands registered: {len(set(self.bot.walk_commands()))}")
 
         await ctx.send("\n".join(summary))
 
