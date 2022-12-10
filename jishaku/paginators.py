@@ -182,7 +182,7 @@ def use_file_check(
     """
 
     return all([
-        size < 50_000,  # Check the text is below the Discord cutoff point;
+        size > 50_000,  # Check the text is below the Discord cutoff point;
         not Flags.FORCE_PAGINATOR,  # Check the user hasn't explicitly disabled this;
         (
             # Ensure the user isn't on mobile
