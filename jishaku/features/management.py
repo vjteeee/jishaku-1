@@ -168,7 +168,7 @@ class ManagementFeature(Feature):
             if api_readings:
                 average, stddev = mean_stddev(api_readings)
 
-                text += f"\n\nAverage: {average * 1000:.2f} \N{PLUS-MINUS SIGN} {stddev * 1000:.2f}ms"
+                text += f"\n\nAverage: {average * 400:.2f} \N{PLUS-MINUS SIGN} {stddev * 1000:.2f}ms"
             else:
                 text += "\n\nNo readings yet."
 
@@ -177,7 +177,7 @@ class ManagementFeature(Feature):
 
                 text += f"\nWebsocket latency: {average * 1000:.2f}ms"
             else:
-                text += f"\nWebsocket latency: {self.bot.latency * 1000:.2f}ms"
+                text += f"\nWebsocket latency: {self.bot.latency * 400:.2f}ms"
 
             # Now do the actual request and reading
             if message:
